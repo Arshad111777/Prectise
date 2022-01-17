@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>calc tab</title>
+  </head>
+  <body style="text-align: center;">
+<input type="text"  id="display" placeholder="start"><br><br>
+<input type="text"  id="display2" placeholder="End"><br><br>
+<input type="text"  id="result_display" placeholder="result"><br><br>
+<button onclick="myFun()">Click To Result</button>
+<button onclick="clr()">Clear</button>
+<button onclick="del()">Delete</button>
+
+
+
+    <!-- JS  -->
+
+    <script>
+let data_start = document.getElementById("display");
+let data_end = document.getElementById("display2");
+let result_data = document.getElementById("result_display");
+
+
+function myFun(){
+   var first_data = data_start.value;
+   var second_data = data_end.value; 
+   var final_result = result_data;
+   
+   var final_data = parseInt(first_data) + parseInt(second_data);
+
+//    console.log(final_data);
+
+result_data.value += final_data;
+
+}
+
+function clr() {
+result_data.value = null;
+data_start.value = null;
+data_end.value = null;
+    
+}
+
+function del(){
+  data_start.value = data_start.value.slice(0,-1);
+//   data_end.value = data_end.value.slice(0,-1);
+    
+}
+
+
+
+
+    </script>
+  </body>
+</html>
